@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+	<title>Fork you 2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+<style type="text/css">
+  #restImage {
+    display:inline-block;
+    border:2px solid black;
+    vertical-align:top;
+    margin-right:10px;
+  }
+
+  #restContent {
+    display:inline-block;
+    width:250px;
+    margin-left: 25px;
+  }
+
+
+</style>
+</head>
+<body>
+
+
+
+<!-- Modal -->
+
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn" data-toggle="modal" 
+          data-target="#myModal" style="margin-top: 1%;">Test Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h3 class="modal-title" id="name">Outback Steakhouse</h3>
+          
+        </div>
+        <div class="modal-body">
+
+          <div id="restImage">
+            <img src="outback.gif">
+          </div>
+
+        	<div id="restContent">
+            <div id="rating">Rating stars go here</div>
+            <p id="costDesc">$$ - Steakhouses</p>
+            <p id="address">990 N State Road 434<br>
+             Altamonte Springs, FL 32714<br> Wekiva Springs</p>
+            <a href="tel: 407-862-1050">407-862-1050</a><br> 
+            
+            <a href="https://www.outback.com/locations/fl/altamonte-springs">outback.com</a>
+
+
+          </div>
+         
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div>
+	<form>
+		<input type="text" name="term" placeholder="term" id="term"></input>
+		<input type="text" name="location" placeholder="location" id="location"></input>
+		<button type="submit" class="btn btn-default" id="submit">Submit</button>
+	</form>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="OAuth.js"></script>
+<script src="SHA1.js"></script>
+<script src="YelpAPICall.js"</script>
+<script type="text/javascript">
+
+
+
+
+// Modal trigger for test button (will be applied to dynamic resturant results buttons)
+
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+
+
+
+
+
+                           // ----Yelp api request section---- //
+
+$('#submit').on('click', function(){
+
+// Yelp search term input
+var term = $('#term').val().trim();
+	console.log(term);
+	console.log("-------------------------------");
+
+// Yelp Zip code entry (consider storing zip code to session data)
+var location = $('#location').val().trim();
+	console.log(location);
+	console.log("-------------------------------");
+
+});
+
+
+
+//-----------------No longer needed code--------------------------//
+
+
+//var timeStamp = $.now();
+
+// var queryYelp = "https://api.yelp.com/v2/search/?term=" + term + 
+// 				"&location=" + zip + "&oauth_consumer_key=89KTplD2sUHcoma0V_c3hw&oauth_token=apgIH6zwsp7oosiwwx8V30kx6U-CyhtM&oauth_signature_method=HMAC-SHA1&oauth_timestamp=" + timeStamp + "&oauth_nonce=SLHLAn&oauth_version=1.0&oauth_signature=jnLUN9EewsNlaHcs5T0S0oCgrdw="
+
+
+	// $.ajax({
+ //            url: "https://api.yelp.com/v2/search/",
+ //            data: {
+ //            	term: term,
+ //            	location: location,
+ //            	limit: "10",
+ //            	oauth_consumer_key: "89KTplD2sUHcoma0V_c3hw",
+ //            	oauth_token: "apgIH6zwsp7oosiwwx8V30kx6U-CyhtM",
+ //            	oauth_signature_method: "HMAC-SHA1",
+ //            	oauth_timestamp: $.now(),
+ //            	oauth_nonce: "Ec0ALI",
+ //            	oauth_version: "1.0",
+ //            	oauth_signature: "KpYthWwkfyzR0huGUZsZzitjzPY=",
+ //            	type: "json"
+ //            	},
+
+ //            method: 'GET'
+            
+
+ //        });
+
+		// $.done(function(response) {
+		// 	console.log(response);
+		// 	document.write(response);
+		// });
+
+
+
+
+
+
+</script>
+</body>
+</style>
+</html>
